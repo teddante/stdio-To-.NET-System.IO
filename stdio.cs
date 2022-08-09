@@ -26,8 +26,8 @@ static class stdio
         return (int)newpositioninthestream;
     }
 
-    public static int ftell(FileStream pfile)
+    public static long ftell(FileStream stream)
     {
-        //return pfile.te
+        return stream.Position;
     }
 }

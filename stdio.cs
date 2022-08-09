@@ -19,15 +19,20 @@ static class stdio
         return file;
     }
 
-    public static int fseek(FileStream stream, long offset, int origin)
+    public static int fseek(ref FileStream stream, long offset, int origin)
     {
-        var newpositioninthestream = stream.Seek(offset, (SeekOrigin)origin);
+        stream.Seek(offset, (SeekOrigin)origin);
 
-        return (int)newpositioninthestream;
+        return 0;
     }
 
     public static long ftell(FileStream stream)
     {
         return stream.Position;
+    }
+
+    public static void rewind(ref FileStream stream)
+    {
+        fseek(ref stream, 0, (int)SeekOrigin.Begin);
     }
 }

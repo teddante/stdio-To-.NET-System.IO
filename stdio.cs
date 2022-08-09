@@ -1,7 +1,6 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
-class FILE
+static class stdio
 {
     public static FileStream fopen(string filename, string mode)
     {
@@ -29,6 +28,6 @@ class FILE
 
     public static int ftell(FileStream pfile)
     {
-        return pfile.te
+        //return pfile.te
     }
 }
